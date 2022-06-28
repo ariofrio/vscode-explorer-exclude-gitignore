@@ -1,0 +1,18 @@
+# Patterns with no slashes, like "node_modules", are correctly excluded from
+# the Explorer.
+no-slash
+no-slash-dir
+# Patterns with leading slashes are incorrectly shown in the Explorer.
+/leading-slash
+/leading-slash-dir
+# Patterns with trailing slashes are excluded from the Explorer only when they
+# apply to directories, as expected. However this is not a good workaround for
+# the above bug because patterns with leading slashes are not equivalent to
+# patterns with trailing slashes (the former are relative to the .gitignore
+# file, the latter apply at any level below it).
+trailing-slash/
+trailing-slash-dir/
+
+# Patterns with slashes in the middle are incorrectly shown in the Explorer.
+dir/file
+dir/subdir
